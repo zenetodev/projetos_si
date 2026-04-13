@@ -26,14 +26,14 @@ PE = 454.57 - 1.986·AT - 0.232·V + 0.062·AP - 0.158·RH
 - AP x PE: 0.518
 - RH x PE: 0.390
 
-## 🛠️ Tecnologias
+##  Tecnologias
 - Python 3.x
 - pandas, numpy
 - scikit-learn
 - matplotlib, seaborn
 - ucimlrepo
 
-## ▶️ Como executar
+## ▶ Como executar
 
 ```bash
 # Clone o repositório
@@ -47,7 +47,7 @@ python main.py
 ```
 
 ## Estrutura do Projeto
-
+```
 ├── data_loader.py          # Carregamento do dataset UCI
 ├── correlation_analysis.py # Análise de correlações (Tarefas 1 e 2)
 ├── regression_model.py     # Regressão linear e métricas (Tarefas 3 e 4)
@@ -55,8 +55,9 @@ python main.py
 ├── correlation_heatmap.png # Matriz de correlação gerada
 ├── requirements.txt        # Dependências
 └── README.md               # Este arquivo
+```
 
 ---
 
-## 🏷️ Tags
+## Tags
 machine-learning, linear-regression, power-plant, regression-analysis, scikit-learn, uci-dataset, python, data-science, predictive-modeling
