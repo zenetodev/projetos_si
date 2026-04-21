@@ -26,23 +26,23 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
     # matriz de confusão
     cm = confusion_matrix(y_test, y_pred)
     
-    print("\n📊 3a) Acurácia:")
+    print("\n 3a) Acurácia:")
     print(f"   • {accuracy:.4f} ({accuracy*100:.2f}%)")
     
-    print("\n📊 3b) Precisão:")
+    print("\n 3b) Precisão:")
     print(f"   • {precision:.4f} ({precision*100:.2f}%)")
     
-    print("\n📊 3c) Recall:")
+    print("\n 3c) Recall:")
     print(f"   • {recall:.4f} ({recall*100:.2f}%)")
     
-    print("\n📊 3d) F1-score:")
+    print("\n 3d) F1-score:")
     print(f"   • {f1:.4f} ({f1*100:.2f}%)")
     
-    print("\n📊 3e) Curva ROC e AUC:")
+    print("\n 3e) Curva ROC e AUC:")
     print(f"   • AUC (Área sob a curva): {auc:.4f}")
     
     # matriz de confusão formatada
-    print("\n📋 Matriz de Confusão:")
+    print("\n Matriz de Confusão:")
     print("                 Previsto")
     print("               Negativo  Positivo")
     print(f"   Real Negativo    {cm[0,0]:3d}       {cm[0,1]:3d}")
@@ -50,29 +50,29 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
     
     # interpretação
     print("\n" + "="*60)
-    print("🔍 INTERPRETAÇÃO DOS RESULTADOS")
+    print(" INTERPRETAÇÃO DOS RESULTADOS")
     print("="*60)
     
     # interpretação do AUC
     if auc >= 0.9:
-        print(f"✅ AUC = {auc:.4f} → Modelo EXCELENTE (discriminação muito boa)")
+        print(f" AUC = {auc:.4f} → Modelo EXCELENTE (discriminação muito boa)")
     elif auc >= 0.8:
-        print(f"✅ AUC = {auc:.4f} → Modelo BOM (discriminação boa)")
+        print(f" AUC = {auc:.4f} → Modelo BOM (discriminação boa)")
     elif auc >= 0.7:
-        print(f"⚠️ AUC = {auc:.4f} → Modelo RAZOÁVEL")
+        print(f" AUC = {auc:.4f} → Modelo RAZOÁVEL")
     else:
-        print(f"❌ AUC = {auc:.4f} → Modelo FRACO")
+        print(f" AUC = {auc:.4f} → Modelo FRACO")
     
     # interpretação do Recall (sensibilidade)
-    print(f"\n📌 Recall (Sensibilidade) = {recall:.4f}")
+    print(f"\n Recall (Sensibilidade) = {recall:.4f}")
     print(f"   → O modelo identificou {recall*100:.1f}% dos pacientes que realmente tinham doença")
     
     # interpretação da Precisão
-    print(f"\n📌 Precisão = {precision:.4f}")
+    print(f"\n Precisão = {precision:.4f}")
     print(f"   → Quando o modelo prevê doença, acerta em {precision*100:.1f}% dos casos")
     
     # interpretação do F1-score
-    print(f"\n📌 F1-score = {f1:.4f}")
+    print(f"\n F1-score = {f1:.4f}")
     print(f"   → Média harmônica entre precisão e recall")
     
     return {
@@ -103,7 +103,7 @@ def plot_roc_curve(y_test: pd.Series, y_pred_proba: np.ndarray, save_path: str =
     plt.tight_layout()
     plt.savefig(save_path, dpi=150)
     plt.show()
-    print(f"\n📊 Curva ROC salva como '{save_path}'")
+    print(f"\n Curva ROC salva como '{save_path}'")
 
 
 if __name__ == "__main__":

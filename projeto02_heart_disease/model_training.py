@@ -14,7 +14,7 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series):
         max_iter=1000        
     )
     
-    print("\n📌 Parâmetros do modelo:")
+    print("\n Parâmetros do modelo:")
     print(f"   • solver: liblinear")
     print(f"   • random_state: 42")
     print(f"   • max_iter: 1000")
@@ -25,13 +25,13 @@ def train_logistic_regression(X_train: pd.DataFrame, y_train: pd.Series):
     # numero de iterações necessárias
     n_iterations = model.n_iter_[0]
     
-    print(f"\n📊 Resultado do treinamento:")
+    print(f"\n Resultado do treinamento:")
     print(f"   • Iterações necessárias para convergência: {n_iterations}")
     print(f"   • Coeficientes (pesos) das features: {model.coef_[0].shape[0]} variáveis")
     print(f"   • Intercept: {model.intercept_[0]:.4f}")
     
     # exibir coeficientes
-    print(f"\n📈 Coeficientes do modelo:")
+    print(f"\n Coeficientes do modelo:")
     for feature, coef in zip(X_train.columns, model.coef_[0]):
         print(f"   • {feature}: {coef:.4f}")
     

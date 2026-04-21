@@ -27,7 +27,7 @@ def get_dataset_info() -> dict:
 
 if __name__ == "__main__":
     X, y = load_heart_disease_data()
-    print(f"✅ Dados carregados com sucesso!")
+    print(f" Dados carregados com sucesso!")
     print(f"Shape de X: {X.shape}")
     print(f"Shape de y: {y.shape}")
     print(f"Colunas: {list(X.columns)}")

@@ -1,10 +1,3 @@
-"""
-Modulo de pre-processamento:
-- Tratamento de valores nulos (mediana)
-- Binarizacao da variavel target
-- Divisao treino/teste com stratify
-- Escalonamento de features continuas
-"""
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -13,19 +6,10 @@ from typing import Tuple
 
 
 def handle_missing_values(X: pd.DataFrame) -> pd.DataFrame:
-    """
-    Trata valores nulos nas colunas 'ca' e 'thal' usando mediana.
-    
-    Args:
-        X: DataFrame com features
-    
-    Returns:
-        DataFrame com valores nulos tratados
-    """
-    # Criar uma copia explicita para evitar warnings
+    # criar uma copia explicita para evitar warnings
     X_clean = X.copy()
     
-    # Colunas que podem ter valores nulos
+    # colunas que podem ter valores nulos
     cols_with_nulls = ['ca', 'thal']
     
     for col in cols_with_nulls:
@@ -41,17 +25,6 @@ def handle_missing_values(X: pd.DataFrame) -> pd.DataFrame:
 
 
 def binarize_target(y: pd.Series) -> pd.Series:
-    """
-    Binariza a variavel target:
-    - 0 → 0 (sem doenca)
-    - 1,2,3,4 → 1 (com doenca)
-    
-    Args:
-        y: Series com valores originais 0-4
-    
-    Returns:
-        Series com valores 0 ou 1
-    """
     y_binary = (y > 0).astype(int)
     
     print(f"\n   Distribuicao original:")
@@ -64,18 +37,6 @@ def binarize_target(y: pd.Series) -> pd.Series:
 
 
 def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_state: int = 42):
-    """
-    Divide dados em treino e teste com estratificacao.
-    
-    Args:
-        X: Features
-        y: Target binarizado
-        test_size: Proporcao de teste (default 0.2)
-        random_state: Semente para reprodutibilidade
-    
-    Returns:
-        X_train, X_test, y_train, y_test
-    """
     X_train, X_test, y_train, y_test = train_test_split(
         X, y,
         test_size=test_size,
@@ -93,29 +54,18 @@ def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_sta
 
 
 def scale_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> Tuple:
-    """
-    Escalona features continuas usando StandardScaler.
-    Features a escalonar: age, trestbps, chol, thalach, oldpeak
-    
-    Args:
-        X_train: Features de treino
-        X_test: Features de teste
-    
-    Returns:
-        X_train_scaled, X_test_scaled, scaler
-    """
     continuous_features = ['age', 'trestbps', 'chol', 'thalach', 'oldpeak']
     
-    # Verificar quais features existem no dataset
+    # verificar quais features existem no dataset
     features_to_scale = [f for f in continuous_features if f in X_train.columns]
     
     print(f"\n   Features escalonadas: {features_to_scale}")
     
-    # Criar copias
+    # criar copias
     X_train_scaled = X_train.copy()
     X_test_scaled = X_test.copy()
     
-    # Aplicar StandardScaler
+    # aplicar StandardScaler
     scaler = StandardScaler()
     X_train_scaled[features_to_scale] = scaler.fit_transform(X_train[features_to_scale])
     X_test_scaled[features_to_scale] = scaler.transform(X_test[features_to_scale])
@@ -124,9 +74,6 @@ def scale_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> Tuple:
 
 
 def check_missing_values(X: pd.DataFrame, stage: str):
-    """
-    Verifica e reporta valores nulos no DataFrame.
-    """
     nulos = X.isnull().sum()
     if nulos.sum() > 0:
         print(f"   ATENCAO - Valores nulos encontrados em {stage}:")
@@ -139,9 +86,6 @@ def check_missing_values(X: pd.DataFrame, stage: str):
 
 
 def run_preprocessing(X: pd.DataFrame, y: pd.Series):
-    """
-    Executa todo o pipeline de pre-processamento.
-    """
     print("\n" + "="*60)
     print("TAREFA 1 - PRE-PROCESSAMENTO")
     print("="*60)
