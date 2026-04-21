@@ -1,6 +1,4 @@
-
-Projeto da disciplina **Sistemas Inteligentes** (2026.1)  
-Previsão da potência elétrica líquida horária (MW) de uma Usina Termoelétrica de Ciclo Combinado (UTCC) utilizando regressão linear múltipla.
+# Projeto 1 - Previsão da potência elétrica líquida horária (MW) de uma Usina Termoelétrica de Ciclo Combinado (UTCC) utilizando regressão linear múltipla.
 
 ## Dataset
 - **Fonte:** UCI Machine Learning Repository - Combined Cycle Power Plant (ID=294)
