@@ -26,14 +26,6 @@ Disciplina: **PAM0466 - Sistemas Inteligentes** (2026.1)
 - pandas, numpy
 - matplotlib
 
-## ▶️ Como executar
-
-```bash
-cd projeto02_heart_disease
-pip install -r requirements.txt
-python main.py
-```
-
 ## Estrutura 
 
 ```
