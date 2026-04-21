@@ -1,63 +1,47 @@
+# PAM0466 - Sistemas Inteligentes
 
-Projeto da disciplina **Sistemas Inteligentes** (2026.1)  
-Previsão da potência elétrica líquida horária (MW) de uma Usina Termoelétrica de Ciclo Combinado (UTCC) utilizando regressão linear múltipla.
+**Disciplina:** PAM0466 - Sistemas Inteligentes  
+**Docente:** Pedro Thiago Valério de Souza  
+**Semestre:** 2026.1  
 
-## Dataset
-- **Fonte:** UCI Machine Learning Repository - Combined Cycle Power Plant (ID=294)
-- **Amostras:** 9.568 coletadas
-- **Features:** AT (temperatura), V (vácuo), AP (pressão), RH (umidade)
-- **Target:** PE (potência elétrica em MW)
+## Sobre
 
-## Resultados Obtidos
+Este repositório contém os projetos práticos da disciplina. Cada projeto está organizado em sua própria pasta com código, documentação e resultados.
 
-| Métrica | Valor |
-|---------|-------|
-| R² | 0.9301 |
-| RMSE | 4.50 MW |
-| MAE | 3.60 MW |
+## Projetos
 
-### Equação do Modelo
+| Projeto | Descrição | Pasta |
+|---------|-----------|-------|
+| 01 | Previsão de potência elétrica em usina termoelétrica (regressão linear múltipla) | [projeto01_utcc/](projeto01_utcc/) |
+| 02 | Previsão de doença cardíaca (regressão logística) | [projeto02_heart_disease/](projeto02_heart_disease/) |
 
-PE = 454.57 - 1.986·AT - 0.232·V + 0.062·AP - 0.158·RH
-
-### Principais Correlações
-- AT x PE: **-0.948** (maior influência)
-- V x PE: **-0.870**
-- AP x PE: 0.518
-- RH x PE: 0.390
-
-##  Tecnologias
-- Python 3.x
-- pandas, numpy
-- scikit-learn
-- matplotlib, seaborn
-- ucimlrepo
-
-## ▶ Como executar
+## Como executar
 
 ```bash
-# Clone o repositório
-git clone https://github.com/zenetodev/projeto_utcc.git
-
-# Instale as dependências
+# Projeto 1
+cd projeto01_utcc
 pip install -r requirements.txt
+python main.py
 
-# Execute o projeto
+# Projeto 2
+cd ../projeto02_heart_disease
+pip install -r requirements.txt
 python main.py
 ```
 
-## Estrutura do Projeto
-```
-├── data_loader.py          # Carregamento do dataset UCI
-├── correlation_analysis.py # Análise de correlações (Tarefas 1 e 2)
-├── regression_model.py     # Regressão linear e métricas (Tarefas 3 e 4)
-├── main.py                 # Orquestrador principal
-├── correlation_heatmap.png # Matriz de correlação gerada
-├── requirements.txt        # Dependências
-└── README.md               # Este arquivo
-```
+## Tecnologias
 
----
+Python, pandas, numpy, scikit-learn, matplotlib, seaborn, ucimlrepo
 
-## Tags
-machine-learning, linear-regression, power-plant, regression-analysis, scikit-learn, uci-dataset, python, data-science, predictive-modeling
+## Status
+
+Projeto 01: Concluído
+
+Projeto 02: Concluído
+
+## Projeto desenvolvido a partir de estudos feitos em sala
+
+## Integrantes
+
+José Ferreira Sousa Neto
+Túlio Gomes de Araújo Feitosa

@@ -52,7 +52,7 @@ def task2_correlation_among_features(X):
     return corr_matrix
 
 if __name__ == "__main__":
-    from data_loader import load_data
+    from projeto01_utcc.data_loader import load_data
     X, y = load_data()
     task1_correlation_with_target(X, y)
     task2_correlation_among_features(X)

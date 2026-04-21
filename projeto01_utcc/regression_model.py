@@ -137,7 +137,7 @@ def task4_evaluate_model(y_test, y_pred):
     return {"R2": float(r2), "RMSE": float(rmse), "MAE": float(mae)}
 
 if __name__ == "__main__":
-    from data_loader import load_data
+    from projeto01_utcc.data_loader import load_data
     X, y = load_data()
     model, X_train, X_test, y_train, y_test, y_pred = task3_build_model(X, y)
     metrics = task4_evaluate_model(y_test, y_pred)

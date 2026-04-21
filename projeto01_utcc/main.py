@@ -1,6 +1,6 @@
-from data_loader import load_data
-from correlation_analysis import task1_correlation_with_target, task2_correlation_among_features
-from regression_model import task3_build_model, task4_evaluate_model
+from projeto01_utcc.data_loader import load_data
+from projeto01_utcc.correlation_analysis import task1_correlation_with_target, task2_correlation_among_features
+from projeto01_utcc.regression_model import task3_build_model, task4_evaluate_model
 
 def main():
     print("\n" + "="*60)
