@@ -1,9 +1,3 @@
-"""
-Modulo de pre-processamento:
-- Recodificacao da variavel quality em 3 classes
-- Normalizacao das features (StandardScaler)
-- Divisao treino/teste com stratify
-"""
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -14,7 +8,6 @@ from typing import Tuple
 def recode_quality(y: pd.Series) -> pd.Series:
     y_recode = y.copy()
     
-    # Aplicar recodificacao
     y_recode = pd.cut(y_recode, 
                       bins=[-float('inf'), 5, 7, float('inf')],
                       labels=[0, 1, 2])
@@ -33,17 +26,6 @@ def recode_quality(y: pd.Series) -> pd.Series:
 
 
 def normalize_features(X: pd.DataFrame, method: str = 'standard') -> Tuple[pd.DataFrame, StandardScaler]:
-    """
-    Normaliza as features usando StandardScaler (Z-score) ou MinMaxScaler.
-    
-    Args:
-        X: DataFrame com features
-        method: 'standard' para Z-score, 'minmax' para Min-Max
-    
-    Returns:
-        X_normalized: DataFrame com features normalizadas
-        scaler: Scaler ajustado
-    """
     if method == 'standard':
         scaler = StandardScaler()
         X_normalized = pd.DataFrame(
@@ -68,18 +50,6 @@ def normalize_features(X: pd.DataFrame, method: str = 'standard') -> Tuple[pd.Da
 
 
 def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_state: int = 42):
-    """
-    Divide dados em treino e teste com estratificacao.
-    
-    Args:
-        X: Features normalizadas
-        y: Target recodificado
-        test_size: Proporcao de teste (default 0.2)
-        random_state: Semente para reprodutibilidade
-    
-    Returns:
-        X_train, X_test, y_train, y_test
-    """
     X_train, X_test, y_train, y_test = train_test_split(
         X, y,
         test_size=test_size,
@@ -105,9 +75,6 @@ def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_sta
 
 
 def run_preprocessing(X: pd.DataFrame, y: pd.Series):
-    """
-    Executa todo o pipeline de pre-processamento.
-    """
     print("\n" + "="*60)
     print("TAREFA 1 - PREPARACAO DOS DADOS")
     print("="*60)

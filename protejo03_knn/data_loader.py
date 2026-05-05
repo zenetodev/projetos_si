@@ -1,18 +1,8 @@
-"""
-Modulo para carregar o dataset Wine Quality Red da UCI.
-"""
 import pandas as pd
 from typing import Tuple
 
 
 def load_wine_data() -> Tuple[pd.DataFrame, pd.Series]:
-    """
-    Carrega o dataset Wine Quality Red diretamente do CSV.
-    
-    Returns:
-        Tuple[pd.DataFrame, pd.Series]: X (features) e y (quality original)
-    """
-    # URL direta do dataset Wine Quality Red
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
     
     # Carregar dados (o separador eh ';')
