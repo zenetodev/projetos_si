@@ -28,6 +28,11 @@ python main.py
 cd ../projeto02_heart_disease
 pip install -r requirements.txt
 python main.py
+
+# Projeto 3
+cd ../projeto03_knn
+pip install -r requirements.txt
+python main.py
 ```
 
 ## Tecnologias
