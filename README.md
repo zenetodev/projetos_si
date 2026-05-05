@@ -14,7 +14,7 @@ Este repositório contém os projetos práticos da disciplina. Cada projeto est�
 |---------|-----------|-------|
 | 01 | Previsão de potência elétrica em usina termoelétrica (regressão linear múltipla) | [projeto01_utcc/](projeto01_utcc/) |
 | 02 | Previsão de doença cardíaca (regressão logística) | [projeto02_heart_disease/](projeto02_heart_disease/) |
-| 03 | Classificação de vinhos (k-NN) | [projeto03_knn/](projeto02_knn/) |
+| 03 | Classificação de vinhos (k-NN) | [projeto03_knn/](projeto03_knn/) |
 
 ## Como executar
 
