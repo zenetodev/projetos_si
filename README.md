@@ -35,7 +35,7 @@ cd ../projeto03_knn
 pip install -r requirements.txt
 python main.py
 
-# Projeto 3
+# Projeto 4
 cd ../projeto04_adaline
 pip install -r requirements.txt
 python main.py
