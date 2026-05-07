@@ -1,29 +1,11 @@
-"""
-Implementacao da Rede Adaline (Adaptive Linear Neuron).
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Tuple, List, Dict
 
 
 class Adaline:
-    """
-    Rede Adaline para classificacao binaria.
-    
-    A regra Delta (Widrow-Hoff) minimiza o erro quadratico medio:
-    E = 1/2 * (d - y)^2
-    Atualizacao dos pesos: w = w + η * (d - y) * x
-    """
     
     def __init__(self, eta: float = 0.0001, n_iterations: int = 200, random_state: int = 42):
-        """
-        Inicializa o perceptron Adaline.
-        
-        Args:
-            eta: Taxa de aprendizagem
-            n_iterations: Numero maximo de epocas
-            random_state: Semente para reproducibilidade
-        """
         self.eta = eta
         self.n_iterations = n_iterations
         self.random_state = random_state
@@ -32,43 +14,19 @@ class Adaline:
         self.cost_history_ = []  # Lista para historico de custo
         
     def _initialize_weights(self, n_features: int):
-        """Inicializa os pesos com valores pequenos aleatorios."""
+
         np.random.seed(self.random_state)
         self.weights = np.random.normal(loc=0.0, scale=0.01, size=n_features)
         self.bias = 0.0
     
     def _activation(self, X: np.ndarray) -> np.ndarray:
-        """
-        Funcao de ativacao linear (diferente do Perceptron).
-        Retorna o valor de saida linear (não binarizado).
-        """
         return np.dot(X, self.weights) + self.bias
     
     def predict(self, X: np.ndarray, threshold: float = 0.0) -> np.ndarray:
-        """
-        Prediz os rotulos para as amostras X.
-        
-        Args:
-            X: Matriz de features (n_samples, n_features)
-            threshold: Limiar de decisao (padrao 0)
-        
-        Returns:
-            y_pred: Array com -1 ou 1
-        """
         linear_output = self._activation(X)
         return np.where(linear_output >= threshold, 1, -1)
     
     def fit(self, X: np.ndarray, y: np.ndarray) -> List[float]:
-        """
-        Treina o modelo Adaline usando regra Delta.
-        
-        Args:
-            X: Matriz de features (n_samples, n_features)
-            y: Array de targets (-1 ou 1)
-        
-        Returns:
-            Lista com historico de custo por epoca
-        """
         n_samples, n_features = X.shape
         
         # Inicializar pesos
@@ -106,18 +64,10 @@ class Adaline:
         return self.cost_history_
     
     def get_cost_history(self) -> List[float]:
-        """Retorna o historico de custo."""
         return self.cost_history_
 
 
 def plot_convergence_curves(results: Dict, save_path: str = "convergence_curves.png"):
-    """
-    Plota as curvas de convergencia para diferentes taxas de aprendizagem.
-    
-    Args:
-        results: Dicionario com {eta: cost_history}
-        save_path: Caminho para salvar a figura
-    """
     plt.figure(figsize=(12, 8))
     
     colors = ['b', 'g', 'r', 'c', 'm', 'orange']

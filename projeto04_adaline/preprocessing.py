@@ -1,10 +1,3 @@
-"""
-Modulo de pre-processamento:
-- Recodificacao do target para +1 (good) e -1 (bad)
-- Remocao de atributos constantes
-- Normalizacao Z-score
-- Divisao treino/teste com stratify
-"""
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -13,16 +6,6 @@ from typing import Tuple
 
 
 def recode_target(y: pd.Series) -> pd.Series:
-    """
-    Recodifica o target: 'g' (good) -> +1, 'b' (bad) -> -1.
-    
-    Args:
-        y: Series com valores 'g' e 'b'
-    
-    Returns:
-        Series com valores +1 e -1 (inteiros)
-    """
-    # Mapeamento correto para os valores originais
     y_recode = y.map({'g': 1, 'b': -1})
     
     # Verificar se houve mapeamento correto
@@ -44,15 +27,6 @@ def recode_target(y: pd.Series) -> pd.Series:
 
 
 def remove_constant_features(X: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove atributos que sao constantes (variancia zero).
-    
-    Args:
-        X: DataFrame com features
-    
-    Returns:
-        DataFrame sem features constantes
-    """
     X_clean = X.copy()
     variancias = X_clean.var()
     
@@ -71,16 +45,6 @@ def remove_constant_features(X: pd.DataFrame) -> pd.DataFrame:
 
 
 def normalize_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> Tuple:
-    """
-    Normaliza as features usando StandardScaler (Z-score).
-    
-    Args:
-        X_train: Features de treino
-        X_test: Features de teste
-    
-    Returns:
-        X_train_scaled, X_test_scaled, scaler
-    """
     scaler = StandardScaler()
     
     X_train_scaled = pd.DataFrame(
@@ -103,9 +67,6 @@ def normalize_features(X_train: pd.DataFrame, X_test: pd.DataFrame) -> Tuple:
 
 
 def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_state: int = 42):
-    """
-    Divide dados em treino e teste com estratificacao.
-    """
     X_train, X_test, y_train, y_test = train_test_split(
         X, y,
         test_size=test_size,
@@ -129,9 +90,6 @@ def split_data(X: pd.DataFrame, y: pd.Series, test_size: float = 0.2, random_sta
 
 
 def run_preprocessing(X: pd.DataFrame, y: pd.Series):
-    """
-    Executa todo o pipeline de pre-processamento.
-    """
     print("\n" + "="*60)
     print("TAREFA 1 - PREPARACAO DOS DADOS")
     print("="*60)
@@ -158,7 +116,6 @@ def run_preprocessing(X: pd.DataFrame, y: pd.Series):
     
     X_train_scaled, X_test_scaled, scaler = normalize_features(X_train, X_test)
     
-    # Converter para numpy arrays para o Adaline
     X_train_array = X_train_scaled.values
     X_test_array = X_test_scaled.values
     y_train_array = y_train.values

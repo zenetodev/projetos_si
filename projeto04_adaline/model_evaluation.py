@@ -7,9 +7,6 @@ from typing import Dict, Tuple
 
 
 def train_final_model(X_train: np.ndarray, y_train: np.ndarray, eta: float, n_iterations: int = 200) -> Adaline:
-    """
-    Treina o modelo final com a melhor taxa de aprendizagem.
-    """
     print("\n" + "="*60)
     print("TAREFA 3 - TREINAMENTO DO MODELO FINAL")
     print("="*60)
@@ -31,9 +28,6 @@ def train_final_model(X_train: np.ndarray, y_train: np.ndarray, eta: float, n_it
 
 
 def plot_final_cost_curve(cost_history: list, eta: float, save_path: str = "final_cost_curve.png"):
-    """
-    Plota a curva de convergencia do modelo final.
-    """
     if not cost_history:
         print("Sem historico de custo para plotar.")
         return
