@@ -40,6 +40,11 @@ python main.py
 cd ../projeto04_adaline
 pip install -r requirements.txt
 python main.py
+
+# Projeto 5 
+cd ../projeto05_nslkdd
+pip install -r requirements.txt
+python main.py
 ```
 
 ## Tecnologias
