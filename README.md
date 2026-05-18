@@ -16,6 +16,7 @@ Este repositório contém os projetos práticos da disciplina. Cada projeto est�
 | 02 | Previsão de doença cardíaca (regressão logística) | [projeto02_heart_disease/](projeto02_heart_disease/) |
 | 03 | Classificação de vinhos (k-NN) | [projeto03_knn/](projeto03_knn/) |
 | 04 | Classificação de retornos ionosféricos (Rede Adaline) | [projeto04_adaline/](projeto04_adaline/) |
+| 05 | Detecção de intrusão em redes (MLP com PyTorch) | [projeto05_nslkdd/](projeto05_nslkdd/) |
 
 ## Como executar
 
@@ -43,7 +44,7 @@ python main.py
 
 ## Tecnologias
 
-Python, pandas, numpy, scikit-learn, matplotlib, seaborn, ucimlrepo
+Python, pandas, numpy, scikit-learn, matplotlib, seaborn, pytorch, ucimlrepo, kagglehub
 
 ## Status
 
@@ -54,6 +55,8 @@ Projeto 02: Concluído
 Projeto 03: Concluído
 
 Projeto 04: Concluído
+
+Projeto 05: Concluído
 
 ## Projeto desenvolvido a partir de estudos feitos em sala
 
