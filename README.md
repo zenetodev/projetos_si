@@ -17,7 +17,7 @@ Este repositório contém os projetos práticos da disciplina. Cada projeto est�
 | 03 | Classificação de vinhos (k-NN) | [projeto03_knn/](projeto03_knn/) |
 | 04 | Classificação de retornos ionosféricos (Rede Adaline) | [projeto04_adaline/](projeto04_adaline/) |
 | 05 | Detecção de intrusão em redes (MLP com PyTorch) | [projeto05_nslkdd/](projeto05_nslkdd/) |
-| 06 | Classificação de elegibilidade para empréstimo (k-NN) - Projeto Final | [projeto06_loan_eligibility/](projeto06_loan_eligibility/) |
+| 06 | Classificação de elegibilidade para empréstimo (k-NN) - Projeto Final | [projeto06final_loan_eligibility/](projeto06final_loan_eligibility/) |
 
 ## Como executar
 
