@@ -1,10 +1,9 @@
 # Projeto 6 - Classificacao de Elegibilidade para Emprestimo (k-NN)
 
 ## Descricao
-Classificacao binaria de solicitacoes de emprestimo (aprovado/rejeitado) usando k-Nearest Neighbors.
+Classificacao binaria de solicitações de empréstimo (aprovado/rejeitado) usando k-Nearest Neighbors.
 
 **Disciplina:** PAM0466 - Sistemas Inteligentes (2026.1)
-**Projeto Final - Apresentacao ao Professor**
 
 ## Dataset
 - **Fonte:** Kaggle - Eligibility Prediction for Loan
@@ -77,7 +76,6 @@ Classificacao binaria de solicitacoes de emprestimo (aprovado/rejeitado) usando 
 - Sensivel a features irrelevantes
 - Pior desempenho com dados desbalanceados
 
-**Recomendacao:** O modelo e ADEQUADO como ferramenta de apoio a decisao, devendo ser usado em conjunto com analise humana.
 
 ## Como executar
 
