@@ -27,7 +27,7 @@ def evaluate_model(model, X_test, y_test) -> Dict:
     print(f"F1-score: {f1:.4f} ({f1*100:.2f}%)")
     
     # Matriz de confusao
-    tn, fp, fn, tp = cm[0,0], cm[0,1], cm[1,0], cm[1,1]
+    tp, fn, fp, tn = cm[0,0], cm[0,1], cm[1,0], cm[1,1]
     
     print("\nMatriz de Confusao:")
     print("-" * 45)
@@ -82,7 +82,7 @@ def analyze_classification_errors(metrics: Dict) -> None:
     
     print("\nConclusao:")
     if fp > fn:
-        print("  O modelo apresenta MAIOR DIFICULDADE em aprovar clientes que seriam rejeitados")
+        print("  O modelo apresenta MAIOR DIFICULDADE em rejeitar clientes que deveriam ser reprovados")
         print("  (Falsos Positivos sao mais frequentes)")
         print("  Isso representa risco financeiro direto para o banco")
     elif fn > fp:
